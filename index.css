@@ -1,23 +1,41 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 html {
     text-align: center;
-    font-family: 'Gabarito', sans-serif;
 }
 #nikaspin {
     border-radius: 200px;
     height: 300px;
     width: auto;
 }
+h1 {
+    font-size: 30px;
+}
 p {
-    font-size: 20px;
+    font-size: 15px;
 }
 .project {
     border-radius: 12px;
-    color: white;
-    background-color:#212121;
     padding: 12px;
-    margin-top: 12px;
+    margin: 12px;
 }
 .links {
     width: 40px;
     height: auto;
+    margin: 12px;
 }
+.columns {
+    padding: 24px;
+    padding-top: 0px;
+}
+#main {
+    display: flex;
+    align-items: center;
+}
+#desc {
+    padding: 0px 50px 0px 50px;
+}
+@media screen and (max-width: 700px) {
+    #main {
+        flex-direction: column;
+    }
+  }
