@@ -7,17 +7,21 @@ html {
     height: 300px;
     width: auto;
 }
+h2 {
+    font-size: 25px;
+}
 h1 {
     font-size: 30px;
 }
 p {
     font-size: 15px;
 }
+/*
 .project {
     border-radius: 12px;
     padding: 12px;
     margin: 12px;
-}
+} */
 .links {
     width: 40px;
     height: auto;
@@ -38,4 +42,19 @@ p {
     #main {
         flex-direction: column;
     }
+  }
+  .project {
+    padding: 12px 80px;
+  }
+  .project img {
+    border-radius: 12px;
+    width: 500px;
+    height: auto;
+  }
+  .project p {
+    font-size: 20px;
+  }
+  i {
+    font-size: 24px;
+    padding: 10px;
   }
