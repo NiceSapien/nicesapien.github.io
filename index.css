@@ -6,6 +6,7 @@ html {
     border-radius: 200px;
     height: 300px;
     width: auto;
+    padding: 12px;
 }
 h2 {
     font-size: 25px;
@@ -42,6 +43,16 @@ p {
     #main {
         flex-direction: column;
     }
+    .project {
+        flex-direction: column-reverse;
+        padding: 12px 12px;
+    }
+    .pro-r {
+        flex-direction: column;
+    }
+    .mhid {
+        display: none;
+    }
   }
   .project {
     padding: 12px 80px;
@@ -57,4 +68,7 @@ p {
   i {
     font-size: 24px;
     padding: 10px;
+  }
+  .box {
+    margin: 24px;
   }
