@@ -9,6 +9,10 @@ html {
     width: auto;
     padding: 12px;
 }
+#nikaspin:hover {
+    webkit-filter: blur(1px); /* Chrome, Safari, Opera */
+    filter: blur(1px);
+}
 h2 {
     font-size: 25px;
 }
@@ -28,6 +32,9 @@ p {
     width: 40px;
     height: auto;
     margin: 12px;
+}
+.links:hover {
+    color: #6c63ff;
 }
 .columns {
     padding: 24px;
@@ -75,4 +82,3 @@ p {
         display: none;
     }
   }
-  
