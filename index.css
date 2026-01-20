@@ -1,84 +1,136 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 html {
-    text-align: center;
-    padding: 12px;
+  scroll-behavior: smooth;
+}
+#shi {
+    font-family: 'Playfair Display', sans-serif;
+    font-style: italic;
+    padding: 0px;
+    margin: 0px;
+}
+#sec1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 0px;
+    margin: 0px
+}
+#sec2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin: 0px 60px 0px 0px;
+}
+body {
+  background-color: #fff; /* Background color */
+  background-image: 
+    radial-gradient(#5e5656 2%, transparent 5%),
+    radial-gradient(#5e5656 2%, transparent 5%);
+  background-size: 30px 30px;
+  background-position: 0 0, 150px 150px;
+  background-repeat: repeat;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}   
+h1 p {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 20px;
+    color: #313131;
+    font-weight: 500;
+}
+#sec1 h1 {
+    font-size: 100px;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+}
+#sec2 h1 {
+    font-size: 50px;
+    margin: 0px;
+}
+#sec2 p {
+    font-size: 15px;
 }
 #nikaspin {
-    border-radius: 200px;
-    height: 300px;
-    width: auto;
-    padding: 12px;
+    font-size: 80px;
+    font-family: 'Inter', sans-serif;
+    padding: 0px;
+    margin: 0px;
 }
-#nikaspin:hover {
-    webkit-filter: blur(1px); /* Chrome, Safari, Opera */
-    filter: blur(1px);
-}
-h2 {
-    font-size: 25px;
-}
-h1 {
-    font-size: 40px;
-}
-p {
-    font-size: 17px;
-}
-/*
-.project {
-    border-radius: 12px;
-    padding: 12px;
-    margin: 12px;
-} */
-.links {
-    width: 40px;
-    height: auto;
-    margin: 12px;
-}
-.links:hover {
-    color: #6c63ff;
-}
-.columns {
-    padding: 24px;
-    padding-top: 0px;
-}
-#main {
+#main2 {
     display: flex;
-    align-items: center;
+    padding: 0px 400px;
 }
-#desc {
-    padding: 0px 50px 0px 50px;
+#main2 img {
+    height: 300px;
+    width: 300px;
+    border-radius: 24px;
 }
-
-  .project {
-    padding: 12px 80px;
-  }
-  .project img {
-    border-radius: 12px;
-    width: 500px;
-    height: auto;
-  }
-  .project p {
-    font-size: 20px;
-  }
-  i {
+a {
+    color: #515151;
+}
+#button {
+    margin-top: 20px;
+    background-color: #191717;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+#button i {
+    padding: 0px 12px 12px 0px;
+}
+#button:hover, #button:focus {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+#btnContainer {
+    padding-top: 40px;
+    width: 75vh;
+}
+#projectbtn {
+    padding-left: 20px;
+}
+#projects {
+    height: 100vh;
+    font-family: 'Gabarito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+#projectitle {
+    font-size: 60px;
+    padding: 0px;
+    margin: 0px;
+}
+#projects p {
     font-size: 24px;
-    padding: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+@media (max-width: 639px) {
+    #sec1 h1, #nikaspin {
+        font-size: 60px;
+    }
+    #sec1 {
+        height: 60vh;
+    }
+  #main2 {
+    flex-direction: column;
   }
-
-  @media screen and (max-width: 700px) {
-    h1 {
-        font-size: 32px;
-    }
-    #main {
-        flex-direction: column;
-    }
-    .project {
-        flex-direction: column-reverse;
-        padding: 12px 12px;
-    }
-    .pro-r {
-        flex-direction: column;
-    }
-    .mhid {
-        display: none;
-    }
+  #btnContainer {
+    width: 100%;
   }
+}
