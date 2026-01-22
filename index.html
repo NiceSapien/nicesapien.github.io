@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NiceSapien</title>
+    <meta name="description" content="NiceSapien's personal website. Just a guy who does weird shi.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,6 +16,14 @@
 </head>
 
 <body>
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <img src="images/batman.svg" id="batman-logo" alt="Loading...">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
     <div id="sec1">
         <h1>
             <p>Hi, my name is</p><span id="nikaspin">NiceSapien.</span><br>I build <span id="shi">weird shi.</span>
@@ -35,9 +44,44 @@
         <img src="images/newsapien.webp" alt="My profile picture" srcset="">
     </div>
     <div id="projects">
-        <h1 id="projectitle">Life is <span style="font-family: 'Playfair Display', sans-serif; font-style: italic;">magical.</span></h1>
-        <p>This section is coming soon.</p>
+        <h1 id="projectitle">My <span
+                style="font-family: 'Playfair Display', sans-serif; font-style: italic;">best</span> projects.</h1>
+        <div class="project">
+            <img src="images/aurachieve.webp" alt="Image of AurAchieve" srcset="">
+            <div class="inProject">
+                <h1>AurAchieve</h1>
+                <p>A FOSS self improvement app. Beautiful journal and habit management features. Written in Dart. Works on Android & iOS.</p>
+                <a href="https://aurachieve.com"><i class="fa-solid fa-link"></i></a>
+                <a href="https://github.com/NiceSapien/AurAchieve"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/AurAchieve"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="project reverse">
+            <img src="images/swpro.png" alt="Image of AurAchieve" srcset="">
+            <div class="inProject">
+                <h1>Sketchware Pro</h1>
+                <p>Built the official website for the mobile app development tool Sketchware Pro, in HTML & CSS.</p>
+                <a href="https://sketchware.pro"><i class="fa-solid fa-link"></i></a>
+                <a href="https://github.com/Sketchware-Pro/Sketchware-Pro-Website"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+                <div class="project">
+            <img src="images/quotes.png" alt="Image of AurAchieve" srcset="">
+            <div class="inProject">
+                <h1>Quotes</h1>
+                <p>A simple quotes website with sparkling mouse pointer. Built within 2 hours.</p>
+                <a href="https://nicesapien.github.io/quotes"><i class="fa-solid fa-link"></i></a>
+                <a href="https://github.com/NiceSapien/quotes"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
     </div>
+    <div id="extraProjects">
+        <h1>Life is magical.</h1>
+        <a href="/starwars">This section is coming soon.</a>
+        
+        <!---   <div class="extraProject"><h2>Nika Mojek</h2><p>A Discord Music bot for the Sketchware Pro Discord server.</p></div> -->
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
