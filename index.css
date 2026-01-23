@@ -1,14 +1,15 @@
+/* main css */
 html {
-  scroll-behavior: smooth;
-  padding: 0px;
-  margin: 0px;
-}
-#shi {
-    font-family: 'Playfair Display', sans-serif;
-    font-style: italic;
+    scroll-behavior: smooth;
     padding: 0px;
     margin: 0px;
 }
+
+#shi {
+    font-style: italic;
+    font-family: 'Playfair Display', sans-serif;
+}
+
 #sec1 {
     display: flex;
     flex-direction: column;
@@ -19,6 +20,7 @@ html {
     padding: 0px;
     margin: 0px
 }
+
 #sec2 {
     height: 40vh;
     width: 100%;
@@ -28,22 +30,26 @@ html {
     align-items: left;
     margin-right: 80px;
 }
+
 body {
-  background-color: #fff; /* Background color */
-  background-image: 
-    radial-gradient(#5e5656 2%, transparent 5%),
-    radial-gradient(#5e5656 2%, transparent 5%);
-  background-size: 30px 30px;
-  background-position: 0 0, 150px 150px;
-  background-repeat: repeat;
-  font-family: 'Inter', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0px;
-  margin: 0px;
-}   
+    transition: 0.3s ease-in-out;
+    background-color: #fff;
+    /* Background color */
+    background-image:
+        radial-gradient(#5e5656 2%, transparent 5%),
+        radial-gradient(#5e5656 2%, transparent 5%);
+    background-size: 30px 30px;
+    background-position: 0 0, 150px 150px;
+    background-repeat: repeat;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+}
+
 h1 p {
     padding: 0px;
     margin: 0px;
@@ -52,38 +58,50 @@ h1 p {
     color: #313131;
     font-weight: 500;
 }
+
 #sec1 h1 {
-    font-size: 100px;
-    margin: 0px;
     padding: 0px;
+    margin: 0px;
+    font-size: 100px;
     font-family: 'Inter', sans-serif;
 }
+
 #sec2 h1 {
     font-size: 55px;
     margin: 0px;
 }
+
 #sec2 p {
-    font-size: 15px;
+    font-size: 16px;
+    opacity: 90%;
+    max-width: 500px;
 }
+
 #nikaspin {
     font-size: 80px;
     font-family: 'Inter', sans-serif;
     padding: 0px;
     margin: 0px;
 }
+
 #main2 {
     display: flex;
     padding: 0px 400px;
+    padding-bottom: 100px;
 }
+
 #main2 img {
     height: 300px;
     width: 300px;
     border-radius: 24px;
 }
+
 a {
     color: #515151;
 }
-#button {
+
+.button {
+    transition: 0.4s ease-in-out;
     margin-top: 20px;
     background-color: #191717;
     color: white;
@@ -92,21 +110,32 @@ a {
     text-decoration: none;
     border: 1px solid black;
 }
-#button i {
+
+.button i {
     padding: 0px 12px 12px 0px;
 }
-#button:hover, #button:focus {
+
+.button:hover,
+.button:focus {
     background-color: transparent;
     color: black;
     border: 1px solid black;
 }
-#btnContainer {
+
+.btnContainer {
     padding-top: 40px;
     width: 75vh;
 }
+
 #projectbtn {
     padding-left: 20px;
 }
+
+#projectbtn:hover {
+    color: black;
+    text-decoration: none;
+}
+
 #projects {
     font-family: 'Gabarito', sans-serif;
     display: flex;
@@ -115,17 +144,21 @@ a {
     justify-content: center;
     text-align: center;
     padding-top: 100px;
+    padding-bottom: 200px;
 }
+
 #projectitle {
     font-size: 55px;
     padding: 0px;
     margin: 0px;
 }
+
 #projects p {
     font-size: 24px;
     padding: 0px;
     margin: 0px;
 }
+
 .project {
     display: flex;
     align-content: center;
@@ -135,157 +168,231 @@ a {
     padding: 60px;
     width: 60vw;
 }
+
 .inProject {
     width: 400px;
     text-align: start;
     border-radius: 16px;
     padding: 12px;
 }
+
 .project h1 {
     font-size: 48px;
     border: 0px solid black;
     border-radius: 12px;
     width: fit-content;
 }
+
 .project p {
     font-size: 20px;
     opacity: 80%;
 }
+
 .project i {
     font-size: 30px;
-    padding: 12px 8px;
+    padding: 12px 0px;
     color: #000;
 }
+
 .project img {
     height: 300px;
     width: auto;
     border-radius: 26px;
 }
-#extraProjects {
+
+#contactMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 18px 200px 18px;
     text-align: center;
 }
+
+#contactMe h1 {
+    font-size: 60px;
+    margin: 0px;
+    padding-bottom: 16px;
+}
+
+#contactMe p {
+    margin: 0px;
+    width: 90vw;
+    opacity: 90%;
+    max-width: 500px;
+}
+
+#extraProjects {
+    text-align: center;
+    flex: 1;
+}
+
 #extraProjects h1 {
-    font-size: 45px;
+    font-size: 60px;
+    margin: 0px;
+    padding: 18px;
 }
+
 #extraProjects a {
+    font-style: bold;
+    font-family: 'Gabarito', sans-serif;
     color: black;
+    font-size: 20px;
+    text-decoration: none;
 }
+
 .reverse {
     flex-direction: row-reverse;
 }
+
+footer i {
+    margin-top: 40px;
+    color: #000;
+    opacity: 85%;
+    font-size: 28px;
+    padding: 12px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+footer i:hover {
+    top: -10px;
+}
+
 @media (max-width: 639px) {
-    html, body {
+
+    html,
+    body {
         overflow-x: hidden;
         max-width: 100vw;
     }
-    #sec1 h1, #nikaspin {
+
+    #sec1 h1,
+    #nikaspin {
         font-size: 60px;
     }
+
     #sec1 {
         padding-left: 18px;
     }
-  #main2 {
-    flex-direction: column;
-  }
-  #sec2 {
-    margin-right: 0px;
-    margin-bottom: 0px;
-  }
-  #btnContainer {
-    width: 100%;
-  }
-  #projectitle {
-    font-size: 40px;
-    padding-bottom: 30px;
-  }
-  #projects p {
-    font-size: 18px;
-    padding: 0px 8px;
-  }
-  #projects {
-    height: auto;
-    padding: 40px 12px 20px 12px;
-  }
-  .project {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    width: auto;
-    gap: 0px;
-    padding: 12px;
-  }
-  .project img {
-    height: 200px;
-    width: auto;
-    border-radius: 12px;
-  }
-  .project h1 {
-    font-size: 30px;
-    width: 100vw;
-    text-align: center;
-  }
-  .inProject {
-    flex-direction: column;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-  }
-  .reverse {
-    flex-direction: column;
-  }
+
+    #main2 {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .btnContainer {
+        width: 100%;
+    }
+
+    #projectitle {
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+
+    #projects p {
+        font-size: 18px;
+        padding: 0px 8px;
+    }
+
+    #projects {
+        height: auto;
+        padding: 40px 12px 200px 12px;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        gap: 0px;
+        padding: 12px;
+    }
+
+    .project img {
+        height: 200px;
+        width: auto;
+        border-radius: 12px;
+    }
+
+    .project h1 {
+        font-size: 30px;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .inProject {
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .reverse {
+        flex-direction: column;
+    }
 }
-
-
-
 
 /* batimation */
 #loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
 .loader-content {
-  text-align: center;
+    text-align: center;
 }
 
 #batman-logo {
-  width: 180px; /* Your requested width */
-  height: auto;
-  margin-bottom: 25px;
-  display: block;
-  animation: batBlink 1.5s infinite ease-in-out;
+    width: 180px;
+    /* Your requested width */
+    height: auto;
+    margin-bottom: 25px;
+    display: block;
+    animation: batBlink 1.5s infinite ease-in-out;
 }
 
 @keyframes batBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.1; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
 }
 
 .progress-container {
-  width: 120px; 
-  height: 12px; /* Your requested height */
-  background: #ffffff;
-  border-radius: 20px;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 1px solid #000000; /* Your requested border */
+    width: 120px;
+    height: 12px;
+    /* Your requested height */
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #000000;
+    /* Your requested border */
 }
 
 #progress-bar {
-  width: 0%;
-  height: 100%;
-  background: #000000;
-  transition: width 0.3s ease-out; /* Snappy, real-time feel */
+    width: 0%;
+    height: 100%;
+    background: #000000;
+    transition: width 0.3s ease-out;
+    /* Snappy, real-time feel */
 }

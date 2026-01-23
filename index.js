@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const progressBar = document.getElementById('progress-bar');
   const loader = document.getElementById('loader-wrapper');
-  
+
   // Track images and fonts
   const imgs = document.querySelectorAll('img:not(#batman-logo)');
   const totalAssets = imgs.length + 1; // All images + Fonts
@@ -38,4 +38,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+});
+
+// lenis/smooth scroll
+const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// pfp animation
+const { animate, splitText, stagger } = anime;
+
+const { words } = splitText('h1');
+
+animate(words, {
+  y: [
+    { to: ['100%', '0%'] },
+  ],
+  opacity: [0, 1],
+  duration: 200,
+  delay: stagger(125),
+  loop: false,
 });
