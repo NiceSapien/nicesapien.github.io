@@ -21,6 +21,12 @@ html {
     margin: 0px
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 #sec2 {
     height: 40vh;
     width: 100%;
@@ -123,7 +129,7 @@ a {
 
 .btnContainer {
     padding-top: 40px;
-    width: 75vh;
+    width: auto;
 }
 
 #projectbtn {
