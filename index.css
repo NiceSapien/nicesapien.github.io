@@ -80,8 +80,8 @@ h1 p {
 #nikaspin {
     font-size: 80px;
     font-family: 'Inter', sans-serif;
-    padding: 0px;
-    margin: 0px;
+    display: inline-flex;
+    cursor: default;
 }
 
 #main2 {
@@ -259,7 +259,93 @@ footer i {
 footer i:hover {
     top: -10px;
 }
+#tech h1 {
+    font-size: 60px;
+    margin-bottom: 40px;
+}
 
+#tech .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+#tech a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+#tech i {
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+#tech img {
+    height: 60px;
+    width: auto;
+}
+
+#tech .hover-icon {
+    display: none;
+}
+
+#tech a:hover .hover-icon {
+    display: inline-block;
+}
+
+#tech a:hover i:has(+ .hover-icon) {
+    display: none;
+}
+
+/* Fallback if :has is not supported or simpler approach: 
+   Since we know which ones have hover-icon, we can just hide 'i' when 'hover-icon' is displayed.
+   However, we need to target the specific 'i' that is a sibling of 'hover-icon'.
+   Basically: When hovering 'a', if it contains '.hover-icon', hide 'i'.
+*/
+#tech a:hover .hover-icon ~ i {
+    display: none; /* This won't work because i is usually before img */
+}
+
+/* Correct approach */
+#tech a:hover i {
+    /* We can't just hide all i because some don't have hover-icon replacements (e.g. html).
+       But wait, the user said "For flutter, replace it... For Linux... For dart...". 
+       So ONLY these have the swap. The others just change color.
+       
+       So we need a way to say: IF the anchor has a .hover-icon child, THEN hide the i child on hover.
+    */
+}
+
+
+#tech a:hover {
+    transform: translateY(-10px);
+}
+
+/* Hover colors */
+#tech a:hover .fa-html5 { color: #E34F26; }
+#tech a:hover .fa-css3-alt { color: #1572B6; }
+#tech a:hover .fa-js { color: #F7DF1E; }
+#tech a:hover .fa-node-js { color: #339933; }
+#tech a:hover .fa-android { color: #3DDC84; }
+#tech a:hover .fa-ubuntu { color: #E95420; }
+#tech a:hover .fa-raspberry-pi { color: #C51A4A; }
+#tech a:hover .fa-git-alt { color: #F05032; }
+#tech a:hover .fa-github { color: #6e5494; }
+
+#tech {
+    margin-bottom: 200px;
+    text-align: center;
+}
 @media (max-width: 639px) {
 
     html,
@@ -285,9 +371,17 @@ footer i:hover {
     .btnContainer {
         width: 100%;
     }
-
+    #tech h1 {
+        font-size: 50px;
+    }
+    #tech i {
+        font-size: 35px;
+    }
+    #tech img {
+        height: 35px;
+    }
     #projectitle {
-        font-size: 40px;
+        font-size: 50px;
         padding-bottom: 30px;
     }
 

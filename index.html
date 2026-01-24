@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NiceSapien</title>
     <meta name="description" content="NiceSapien's personal website. Just a guy who does weird shi.">
+    <meta property="og:title" content="NiceSapien">
+    <meta property="og:description" content="NiceSapien's personal website. Just a guy who does weird shi.">
+    <meta property="og:image" content="images/ogimage.png">
+    <link rel="icon" type="image/webp" href="images/roundsapien.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/regular.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css">
@@ -31,7 +33,7 @@
     </div>
     <div id="sec1">
         <h1>
-            <p>Hi, my name is</p><span id="nikaspin">NiceSapien.</span><br>I build <span id="shi">weird shi.</span>
+            <p>Hi, my name is</p><span id="nikaspin" class="ms-playful-text">NiceSapien.</span><br>I build <span id="shi">weird shi.</span>
         </h1>
         <div class="btnContainer"><a class="button" href="https://github.com/nicesapien"><i class="fa-brands fa-github"
                     style="font-size:24px;"></i>GitHub</a>
@@ -49,6 +51,33 @@
         </div>
         <img src="images/newsapien.webp" alt="My profile picture" srcset="">
     </div>
+    <div id="tech">
+        <h1>Technologies I'm <span style="font-family: 'Playfair Display', sans-serif; font-style:italic;">good</span>
+            at.</h1>
+        <div class="tech-icons">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" aria-label="HTML5"><i
+                    class="fa-brands fa-html5"></i></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" aria-label="CSS3"><i
+                    class="fa-brands fa-css3-alt"></i></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" aria-label="JavaScript"><i
+                    class="fa-brands fa-js"></i></a>
+            <a href="https://nodejs.org/" target="_blank" aria-label="Node.js"><i class="fa-brands fa-node-js"></i></a>
+            <a href="https://flutter.dev/" target="_blank" aria-label="Flutter"><i class="fa-brands fa-flutter"></i><img
+                    src="images/icons8-flutter.svg" alt="Flutter" class="hover-icon"></a>
+            <a href="https://dart.dev/" target="_blank" aria-label="Dart"><i class="fa-brands fa-dart-lang"></i><img
+                    src="images/icons8-dart.svg" alt="Dart" class="hover-icon"></a>
+            <a href="https://www.android.com/" target="_blank" aria-label="Android"><i
+                    class="fa-brands fa-android"></i></a>
+            <a href="https://www.apple.com/" target="_blank" aria-label="Apple"><i class="fa-brands fa-apple"></i></a>
+            <a href="https://www.linux.org/" target="_blank" aria-label="Linux"><i class="fa-brands fa-linux"></i><img
+                    src="images/linux.svg" alt="Linux" class="hover-icon"></a>
+            <a href="https://ubuntu.com/" target="_blank" aria-label="Ubuntu"><i class="fa-brands fa-ubuntu"></i></a>
+            <a href="https://www.raspberrypi.org/" target="_blank" aria-label="Raspberry Pi"><i
+                    class="fa-brands fa-raspberry-pi"></i></a>
+            <a href="https://git-scm.com/" target="_blank" aria-label="Git"><i class="fa-brands fa-git-alt"></i></a>
+            <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </div>
     <div id="projects">
         <h1 id="projectitle">My <span
                 style="font-family: 'Playfair Display', sans-serif; font-style: italic;">best</span> projects.</h1>
@@ -64,7 +93,7 @@
             </div>
         </div>
         <div class="project reverse">
-            <img src="images/swpro.png" alt="Image of AurAchieve" srcset="">
+            <img src="images/swpro.webp" alt="Image of AurAchieve" srcset="">
             <div class="inProject">
                 <h1>Sketchware Pro</h1>
                 <p>Built the official website for the mobile app development tool Sketchware Pro, in HTML & CSS.</p>
@@ -74,7 +103,7 @@
             </div>
         </div>
         <div class="project">
-            <img src="images/quotes.png" alt="Image of AurAchieve" srcset="">
+            <img src="images/quotes.webp" alt="Image of AurAchieve" srcset="">
             <div class="inProject">
                 <h1>Quotes</h1>
                 <p>A simple quotes website with sparkling mouse pointer. Built within 2 hours.</p>
@@ -92,18 +121,18 @@
                     style="font-size:24px;"></i>Say hello</a>
         </div>
     </div>
-    <div id="extraProjects">
-        <h1>Life is magical.</h1>
+   <!-- <div id="extraProjects">
+        <h1>Life is magical</span>.</h1>
         <a href="/starwars">This section is coming soon.</a>
-
-        <!---   <div class="extraProject"><h2>Nika Mojek</h2><p>A Discord Music bot for the Sketchware Pro Discord server.</p></div> -->
-    </div>
+           <div class="extraProject"><h2>Nika Mojek</h2><p>A Discord Music bot for the Sketchware Pro Discord server.</p></div> -->
+ <!--   </div> -->
     <footer>
-        <a href="https://youtube.com/c/nicesapien"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://discord.gg/2qWVzFnKJR" target="_blank"><i class="fa-brands fa-discord"></i></a>
+        <a href="mailto:nicesapien@duck.com"><i class="fa-regular fa-envelope"></i></a>
         <a href="https://github.com/nicesapien"><i class="fa-brands fa-github"></i></a>
+        <a href="https://youtube.com/c/nicesapien"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://instagram.com/nicesapien"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://x.com/nicesapien"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="mailto:nicesapien@duck.com"><i class="fa-regular fa-envelope"></i></a>
     </footer>
     <script src="index.js" defer></script>
 </body>

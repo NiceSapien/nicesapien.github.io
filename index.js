@@ -50,6 +50,7 @@ const { animate, splitText, stagger } = anime;
 
 const { words } = splitText('h1');
 
+
 animate(words, {
   y: [
     { to: ['100%', '0%'] },
@@ -58,4 +59,44 @@ animate(words, {
   duration: 200,
   delay: stagger(125),
   loop: false,
+});
+
+// font changing ahh
+const nika = document.getElementById('nikaspin');
+const nameText = nika.textContent;
+const letters = nameText.split("");
+
+// Clear the original text
+nika.textContent = "";
+
+const randomFonts = ['f-alt-1', 'f-alt-2', 'f-alt-3'];
+
+letters.forEach(char => {
+    const span = document.createElement('span');
+    span.textContent = char;
+    nika.appendChild(span);
+
+    span.addEventListener('mouseenter', () => {
+        // Pick a random style
+        const randomClass = randomFonts[Math.floor(Math.random() * randomFonts.length)];
+        span.classList.add(randomClass);
+        
+        // Optional: Small Anime.js pop
+        anime({
+            targets: span,
+            translateY: -10,
+            duration: 400
+        });
+    });
+
+    span.addEventListener('mouseleave', () => {
+        // Remove all extra font classes
+        randomFonts.forEach(c => span.classList.remove(c));
+        
+        anime({
+            targets: span,
+            translateY: 0,
+            duration: 600
+        });
+    });
 });
