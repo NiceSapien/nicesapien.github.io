@@ -39,7 +39,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// font changing ahh
+document.addEventListener("DOMContentLoaded", () => {
+    const nika = document.getElementById('nikaspin');
+    
+    if (nika) {
+        const text = nika.innerText.trim();
+        const letters = text.split("");
+        nika.innerHTML = ""; // This clears the "NiceSapien." text
 
+        const fonts = ['f-1', 'f-2', 'f-3'];
+
+        letters.forEach(char => {
+            const span = document.createElement('span');
+            span.innerText = char === " " ? "\u00A0" : char;
+            nika.appendChild(span);
+
+            span.addEventListener('mouseover', () => {
+                const font = fonts[Math.floor(Math.random() * fonts.length)];
+                span.classList.add(font);
+                if (window.anime) anime({ targets: span, translateY: -10, duration: 400 });
+            });
+
+            span.addEventListener('mouseout', () => {
+                span.classList.remove('f-1', 'f-2', 'f-3');
+                if (window.anime) anime({ targets: span, translateY: 0, duration: 600 });
+            });
+        });
+        console.log("Spans created for:", text);
+    } else {
+        console.log("Element #nikaspin not found");
+    }
+});
 // lenis/smooth scroll
 const lenis = new Lenis({
   autoRaf: true,
@@ -61,42 +92,3 @@ animate(words, {
   loop: false,
 });
 
-// font changing ahh
-const nika = document.getElementById('nikaspin');
-const nameText = nika.textContent;
-const letters = nameText.split("");
-
-// Clear the original text
-nika.textContent = "";
-
-const randomFonts = ['f-alt-1', 'f-alt-2', 'f-alt-3'];
-
-letters.forEach(char => {
-    const span = document.createElement('span');
-    span.textContent = char;
-    nika.appendChild(span);
-
-    span.addEventListener('mouseenter', () => {
-        // Pick a random style
-        const randomClass = randomFonts[Math.floor(Math.random() * randomFonts.length)];
-        span.classList.add(randomClass);
-        
-        // Optional: Small Anime.js pop
-        anime({
-            targets: span,
-            translateY: -10,
-            duration: 400
-        });
-    });
-
-    span.addEventListener('mouseleave', () => {
-        // Remove all extra font classes
-        randomFonts.forEach(c => span.classList.remove(c));
-        
-        anime({
-            targets: span,
-            translateY: 0,
-            duration: 600
-        });
-    });
-});
