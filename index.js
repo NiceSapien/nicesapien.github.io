@@ -92,3 +92,24 @@ animate(words, {
   loop: false,
 });
 
+// Scroll Reveal Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Run once
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px" // Trigger slightly before element is fully in view
+    });
+
+    reveals.forEach(reveal => {
+        revealOnScroll.observe(reveal);
+    });
+});
+
