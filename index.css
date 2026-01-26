@@ -636,6 +636,10 @@ footer a:hover i {
         align-items: center;
     }
 
+    .social-links {
+        justify-content: center;
+    }
+
     .btnContainer {
         width: 100%;
     }
@@ -890,3 +894,53 @@ footer a:hover i {
         grid-template-columns: 1fr;
     }
 }
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a i {
+    color: #313131;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    border-color: #000;
+    background-color: #000;
+    transform: translateY(-3px);
+}
+
+.social-links a:hover i {
+    color: #fff;
+}
+
+.sl-mobile {
+    display: none;
+}
+
+@media (max-width: 639px) {
+    .sl-desktop {
+        display: none !important;
+    }
+    .sl-mobile {
+        display: flex !important;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
