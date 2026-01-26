@@ -129,10 +129,18 @@ a {
     border-radius: 30px;
     text-decoration: none;
     border: 1px solid black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button i {
-    padding: 0px 12px 12px 0px;
+    padding-right: 12px;
+}
+
+.button.outline {
+    background-color: transparent;
+    color: #191717;
 }
 
 .button:hover,
@@ -140,6 +148,17 @@ a {
     background-color: transparent;
     color: black;
     border: 1px solid black;
+}
+
+.button.outline:hover,
+.button.outline:focus {
+    background-color: #191717;
+    color: white !important;
+    border-color: #191717;
+}
+
+.outlined-img {
+    border: 1px solid #000;
 }
 
 .btnContainer {
@@ -266,19 +285,43 @@ a {
     flex-direction: row-reverse;
 }
 
-footer i {
-    margin-top: 40px;
-    color: #000;
-    opacity: 85%;
-    font-size: 28px;
-    padding: 12px;
-    position: relative;
-    top: 0;
-    transition: top ease 0.5s;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 40px 20px 80px;
+    flex-wrap: wrap;
 }
 
-footer i:hover {
-    top: -10px;
+footer a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+footer a:hover {
+    background-color: #f5f5f5;
+    border-color: #e0e0e0;
+    transform: translateY(-5px);
+}
+
+footer i {
+    color: #313131;
+    font-size: 22px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+footer a:hover i {
+    opacity: 1;
+    color: #000;
 }
 
 #tech h1 {
@@ -527,7 +570,8 @@ footer i:hover {
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    opacity: 0.5;
+    opacity: 1;
+    color: #515151;
     margin-top: 20px;
 }
 
@@ -573,6 +617,7 @@ footer i:hover {
         flex-direction: column;
         gap: 0px;
         padding: 0px 20px;
+        align-items: center;
     }
 
     .btnContainer {
@@ -731,4 +776,84 @@ footer i:hover {
     background: #000000;
     transition: width 0.3s ease-out;
     /* Snappy, real-time feel */
+}
+/* Extra Projects Section */
+#extraProjects {
+    text-align: center;
+    padding: 0px 20px 150px 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#extraProjects h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
+    font-family: 'Gabarito', sans-serif;
+}
+
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 40px;
+}
+
+.extra-card {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.extra-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px rgba(0,0,0,1);
+}
+
+.extra-card h2 {
+    font-family: 'Gabarito', sans-serif;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+}
+
+.extra-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    opacity: 0.8;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.card-links {
+    font-size: 24px;
+    align-self: flex-end;
+}
+
+.card-links a {
+    color: #313131;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.card-links a:hover {
+    color: #000;
+}
+
+@media (max-width: 639px) {
+    #extraProjects h1 {
+        font-size: 50px;
+    }
+    .extra-grid {
+        padding: 0 10px;
+        grid-template-columns: 1fr;
+    }
 }
