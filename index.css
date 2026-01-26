@@ -1,8 +1,22 @@
+@font-face{
+  font-family: "StarJedi";
+  src: url("/fonts/StarJedi.woff2") format("woff2"),
+       url("/fonts/StarJedi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /* main css */
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
     padding: 0px;
     margin: 0px;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 #shi {
@@ -146,6 +160,7 @@ a {
     font-family: 'Gabarito', sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center;
     align-content: center;
     justify-content: center;
     text-align: center;
@@ -265,6 +280,7 @@ footer i {
 footer i:hover {
     top: -10px;
 }
+
 #tech h1 {
     font-size: 60px;
     margin-bottom: 40px;
@@ -318,8 +334,9 @@ footer i:hover {
    However, we need to target the specific 'i' that is a sibling of 'hover-icon'.
    Basically: When hovering 'a', if it contains '.hover-icon', hide 'i'.
 */
-#tech a:hover .hover-icon ~ i {
-    display: none; /* This won't work because i is usually before img */
+#tech a:hover .hover-icon~i {
+    display: none;
+    /* This won't work because i is usually before img */
 }
 
 /* Correct approach */
@@ -338,20 +355,113 @@ footer i:hover {
 }
 
 /* Hover colors */
-#tech a:hover .fa-html5 { color: #E34F26; }
-#tech a:hover .fa-css3-alt { color: #1572B6; }
-#tech a:hover .fa-js { color: #F7DF1E; }
-#tech a:hover .fa-node-js { color: #339933; }
-#tech a:hover .fa-android { color: #3DDC84; }
-#tech a:hover .fa-ubuntu { color: #E95420; }
-#tech a:hover .fa-raspberry-pi { color: #C51A4A; }
-#tech a:hover .fa-git-alt { color: #F05032; }
-#tech a:hover .fa-github { color: #6e5494; }
+#tech a:hover .fa-html5 {
+    color: #E34F26;
+}
+
+#tech a:hover .fa-css3-alt {
+    color: #1572B6;
+}
+
+#tech a:hover .fa-js {
+    color: #F7DF1E;
+}
+
+#tech a:hover .fa-node-js {
+    color: #339933;
+}
+
+#tech a:hover .fa-android {
+    color: #3DDC84;
+}
+
+#tech a:hover .fa-ubuntu {
+    color: #E95420;
+}
+
+#tech a:hover .fa-raspberry-pi {
+    color: #C51A4A;
+}
+
+#tech a:hover .fa-git-alt {
+    color: #F05032;
+}
+
+#tech a:hover .fa-github {
+    color: #6e5494;
+}
 
 #tech {
     margin-bottom: 200px;
     text-align: center;
 }
+
+#starwars {
+    position: relative;
+    border-radius: 60px;
+    height: 50vh;
+    width: 50vw;
+    background-image: image-set('/images/stars.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    gap: 20px;
+}
+
+#starwars img {
+    position: relative;
+    width: clamp(120px, 20vw, 320px);
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#starwars img:hover {
+    transform: scale(1.1);
+}
+
+#nowadays-title {
+    font-size: 60px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Gabarito', sans-serif;
+}
+
+.personal-note {
+    text-align: center;
+    margin: 0 auto 40px auto;
+    opacity: 0.8;
+    width: 90vw;
+    max-width: 600px;
+}
+
+/* iPad ahh optimizations */
+@media (max-width: 1400px) {
+    #main2 {
+        padding: 0px 50px;
+        align-items: flex-start;
+    }
+
+    #sec2 {
+        margin-right: 30px;
+        justify-content: flex-start;
+        min-height: auto;
+    }
+
+    .project {
+        width: 95vw;
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+/* phone ahh optimizations */
 @media (max-width: 639px) {
 
     html,
@@ -372,23 +482,29 @@ footer i:hover {
     #main2 {
         flex-direction: column;
         gap: 0px;
+        padding: 0px 20px;
     }
 
     .btnContainer {
         width: 100%;
     }
+
     #tech h1 {
         font-size: 50px;
     }
+
     #tech i {
         font-size: 35px;
     }
+
     #tech img {
         height: 35px;
     }
-    #projectitle {
+
+    #projectitle,
+    #nowadays-title {
         font-size: 50px;
-        padding-bottom: 30px;
+        padding-bottom: 10px;
     }
 
     #projects p {
@@ -399,6 +515,16 @@ footer i:hover {
     #projects {
         height: auto;
         padding: 40px 12px 200px 12px;
+    }
+
+    #sec2 {
+        align-items: center;
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    #sec2 p {
+        text-align: center;
     }
 
     .project {
@@ -421,20 +547,30 @@ footer i:hover {
 
     .project h1 {
         font-size: 30px;
-        width: 100vw;
+        width: 100%;
         text-align: center;
     }
 
     .inProject {
-        flex-direction: column;
+        width: 100%;
+        display: block;
         text-align: center;
-        align-content: center;
-        align-items: center;
-        justify-content: center;
     }
 
     .reverse {
         flex-direction: column;
+    }
+
+    #starwars {
+        width: 90vw;
+        height: 25vh;
+        border-radius: 30px;
+        padding-left: 0px;
+        align-items: center;
+    }
+
+    #starwars img {
+        width: 40vw;
     }
 }
 
