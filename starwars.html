@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BKPWD74K7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4BKPWD74K7');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NiceSapien - Star Wars Watchlist</title>
@@ -45,7 +54,9 @@
             color: #313131;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: 'Gabarito', sans-serif;
             margin: 0;
             padding: 0;
@@ -152,14 +163,14 @@
 
         .phase-box:hover {
             transform: translateY(-5px);
-            box-shadow: 10px 10px 0px rgba(0,0,0,1);
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
         }
 
         .phase-box h2 {
             font-size: 32px;
             margin-bottom: 15px;
         }
-        
+
         .phase-box h2 span {
             opacity: 0.5;
             font-size: 20px;
@@ -244,13 +255,14 @@
             header h1 {
                 font-size: 50px;
             }
-            
+
             .back-link {
                 top: 20px;
                 left: 20px;
             }
 
-            .container, .stats-bar {
+            .container,
+            .stats-bar {
                 width: 90vw;
             }
 
@@ -259,7 +271,7 @@
                 align-items: flex-start;
                 gap: 10px;
             }
-            
+
             .phase-box {
                 padding: 25px;
             }
@@ -283,17 +295,19 @@
     </div>
 
     <div class="container">
-        
+
         <div class="phase-box">
             <h2>Era 1 <span class="playfair">Fall of the Republic</span></h2>
             <p class="phase-desc">The beginning of the Skywalker saga and the Clone Wars.</p>
             <ul class="show-list">
                 <li class="show-item completed">
-                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode I: The Phantom Menace</span>
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode I: The Phantom
+                        Menace</span>
                     <span class="tag">The Beginning</span>
                 </li>
                 <li class="show-item completed">
-                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode II: Attack of the Clones</span>
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode II: Attack of the
+                        Clones</span>
                     <span class="tag">The Clone Wars Begin</span>
                 </li>
                 <li class="show-item">
@@ -301,7 +315,8 @@
                     <span class="tag highlight">Watching now</span>
                 </li>
                 <li class="show-item completed">
-                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode III: Revenge of the Sith</span>
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode III: Revenge of the
+                        Sith</span>
                     <span class="tag">Absolute Cinema</span>
                 </li>
                 <li class="show-item">
@@ -336,11 +351,13 @@
                     <span class="tag">The Classic</span>
                 </li>
                 <li class="show-item completed">
-                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode V: The Empire Strikes Back</span>
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode V: The Empire Strikes
+                        Back</span>
                     <span class="tag">The GOAT</span>
                 </li>
                 <li class="show-item completed">
-                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode VI: Return of the Jedi</span>
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode VI: Return of the
+                        Jedi</span>
                     <span class="tag">The Finale?</span>
                 </li>
             </ul>
