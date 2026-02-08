@@ -220,6 +220,25 @@
             color: #2e7d32;
         }
 
+        .show-item.dropped {
+            background-color: #ffe6e6;
+            border-color: #d9a5a5;
+        }
+
+        .show-item.dropped .movie-title {
+            color: #d32f2f;
+        }
+
+        .show-item.skipped {
+            background-color: #f5f5f5;
+            opacity: 0.6;
+        }
+
+        .show-item.skipped .movie-title {
+            color: #757575;
+            font-style: italic;
+        }
+
         .movie-title {
             font-weight: 600;
             font-size: 18px;
@@ -310,18 +329,18 @@
                         Clones</span>
                     <span class="tag">The Clone Wars Begin</span>
                 </li>
-                <li class="show-item">
-                    <span class="movie-title">The Clone Wars (Movie & Series)</span>
-                    <span class="tag highlight">Watching now</span>
+                <li class="show-item dropped">
+                    <span class="movie-title"><i class="fa-solid fa-times-circle"></i> The Clone Wars (Movie & Series)</span>
+                    <span class="tag">Dropped</span>
                 </li>
                 <li class="show-item completed">
                     <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Episode III: Revenge of the
                         Sith</span>
                     <span class="tag">Absolute Cinema</span>
                 </li>
-                <li class="show-item">
-                    <span class="movie-title">The Bad Batch (Series)</span>
-                    <span class="tag">Clone Wars Epilogue</span>
+                <li class="show-item skipped">
+                    <span class="movie-title"><i class="fa-solid fa-forward"></i> The Bad Batch (Series)</span>
+                    <span class="tag">Skipped</span>
                 </li>
             </ul>
         </div>
@@ -330,17 +349,17 @@
             <h2>Era 2 <span class="playfair">Rise of the Rebellion</span></h2>
             <p class="phase-desc">Dark times under the Empire and the spark of hope.</p>
             <ul class="show-list">
-                <li class="show-item">
-                    <span class="movie-title">Solo: A Star Wars Story</span>
+                <li class="show-item completed">
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Solo: A Star Wars Story</span>
                     <span class="tag">Han's Origin</span>
                 </li>
-                <li class="show-item">
-                    <span class="movie-title">Obi-Wan Kenobi (Series)</span>
+                <li class="show-item completed">
+                    <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Obi-Wan Kenobi (Series)</span>
                     <span class="tag">The Desert Years</span>
                 </li>
                 <li class="show-item">
                     <span class="movie-title">Andor (Series)</span>
-                    <span class="tag highlight">Peak Writing</span>
+                    <span class="tag highlight">Watching now</span>
                 </li>
                 <li class="show-item completed">
                     <span class="movie-title"><i class="fa-solid fa-check-circle"></i> Rogue One</span>
