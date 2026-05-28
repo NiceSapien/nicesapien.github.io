@@ -113,3 +113,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// pfp animation
+document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('shi');
+    const container = document.querySelector('.tilt-container');
+
+    // Safety check to make sure the elements are found
+    if (!el || !container) {
+        console.error("Could not find #shi or .tilt-container in the DOM!");
+        return;
+    }
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        
+        const x = e.clientX - rect.left - (rect.width / 2);
+        const y = e.clientY - rect.top - (rect.height / 2);
+        
+        const rotateX = -(y / (rect.height / 2)) * 20; 
+        const rotateY = (x / (rect.width / 2)) * 20;
+        
+        el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        el.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+});
