@@ -140,3 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transform = 'rotateX(0deg) rotateY(0deg)';
     });
 });
+
+// spiderman.html
+document.getElementById('shi').addEventListener('click', function() {
+  console.log("clucked");
+  window.location.replace('spiderman.html');
+});
