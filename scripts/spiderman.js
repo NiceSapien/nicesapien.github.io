@@ -3,10 +3,11 @@ const mojek = document.getElementById("mojek");
 document.addEventListener("DOMContentLoaded", () => {
   const progressBar = document.getElementById("progress-bar");
   const loader = document.getElementById("loader-wrapper");
-  const audio = document.getElementById("bg-audio");
 
-  const imgs = document.querySelectorAll("img:not(#batman-logo)");
-  const totalAssets = imgs.length + 2; 
+  const imgs = document.querySelectorAll(
+    "img:not(#batman-logo):not(#reveal-img):not(#swinging-spidey)",
+  );
+  const totalAssets = imgs.length + 2;
   let loadedCount = 0;
 
   function updateProgress() {
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         loader.style.transition = "opacity 0.5s ease";
         loader.style.opacity = "0";
-        mojek.style.display = "block"; 
+        mojek.style.display = "block";
         setTimeout(() => {
           loader.style.display = "none";
         }, 500);
@@ -29,14 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.fonts.ready.then(updateProgress);
 
   if (audio) {
-    if (audio.readyState >= 4) { 
+    if (audio.readyState >= 4) {
       updateProgress();
     } else {
       audio.addEventListener("canplaythrough", updateProgress, { once: true });
-      audio.addEventListener("error", updateProgress, { once: true }); 
+      audio.addEventListener("error", updateProgress, { once: true });
     }
   } else {
-    updateProgress(); 
+    updateProgress();
   }
 
   if (imgs.length === 0) {
@@ -47,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
         updateProgress();
       } else {
         img.addEventListener("load", updateProgress);
-        img.addEventListener("error", updateProgress); 
+        img.addEventListener("error", updateProgress);
       }
     });
   }
-});// font changing ahh
+}); // font changing ahh
 document.addEventListener("DOMContentLoaded", () => {
   const nika = document.getElementById("nikaspin");
 
@@ -85,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Element #nikaspin not found");
   }
 });
+
 // lenis/smooth scroll
 const lenis = new Lenis({
   autoRaf: true,
@@ -127,12 +129,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// background music
+// hover effect on pfp
+const box = document.getElementById("spider-box");
+const revealImg = document.getElementById("reveal-img");
+
+if (box && revealImg) {
+  box.addEventListener("mousemove", (e) => {
+    const rect = box.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    revealImg.style.setProperty("--x", `${x}px`);
+    revealImg.style.setProperty("--y", `${y}px`);
+    revealImg.style.setProperty("--radius", "150px");
+  });
+
+  box.addEventListener("mouseleave", () => {
+    revealImg.style.setProperty("--radius", "0px");
+  });
+}
+
+// swingerman
 const audio = document.getElementById("bg-audio");
 const video = document.getElementById("bg-video");
 const mojekBtn = document.getElementById("bg-audio-btn");
 const mojekCenter = document.getElementById("mojekCenter");
+const swingOverlay = document.getElementById("swing-overlay"); 
 const mojekStartTime = 1.2;
+let swingTriggered = false;
 
 mojekBtn.addEventListener("click", () => {
   if (audio.paused) {
@@ -142,10 +166,11 @@ mojekBtn.addEventListener("click", () => {
     }
 
     video.style.display = "block";
+    swingTriggered = false;
 
     Promise.all([audio.play(), video.play()])
       .then(() => {
-        mojekCenter.style.opacity = "0"; 
+        mojekCenter.style.opacity = "0";
         setTimeout(() => {
           mojekCenter.style.display = "none";
         }, 500);
@@ -156,10 +181,51 @@ mojekBtn.addEventListener("click", () => {
   }
 });
 
+video.addEventListener("timeupdate", () => {
+  if (video.duration && !swingTriggered) {
+    if (video.duration - video.currentTime <= 0.4) {
+      swingTriggered = true;
+
+      if (swingOverlay) {
+        swingOverlay.innerHTML = ""; 
+        
+        const spiderImg = document.createElement("img");
+        spiderImg.src = "images/spiderman-swinging.gif";
+        spiderImg.id = "swinging-spidey";
+        spiderImg.alt = "Swinging Spiderman";
+        
+        swingOverlay.appendChild(spiderImg);
+        swingOverlay.classList.add("swing-active");
+        
+        setTimeout(() => {
+          swingOverlay.classList.remove("swing-active");
+          swingOverlay.innerHTML = ""; 
+        }, 2400);
+      }
+    }
+  }
+});
+
 video.addEventListener("ended", () => {
   mojek.style.opacity = "0";
 
   setTimeout(() => {
     mojek.style.display = "none";
+  }, 500);
+});
+
+// drop down
+const mainContent = document.getElementById("main-content");
+
+video.addEventListener("ended", () => {
+  mojek.style.opacity = "0";
+
+  setTimeout(() => {
+    mojek.style.display = "none";
+    
+    if (mainContent) {
+      mainContent.classList.remove("content-hidden");
+      mainContent.classList.add("content-reveal");
+    }
   }, 500);
 });

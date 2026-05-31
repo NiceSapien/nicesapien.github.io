@@ -36,8 +36,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     />
     <link
       rel="stylesheet"
@@ -60,7 +60,10 @@
     <script src="anime.umd.min.js" defer></script>
   </head>
 
-  <body>
+<body>
+        <div class="swing-overlay" id="swing-overlay">
+        <img src="images/spiderman-swinging.gif" alt="Swinging Spiderman" id="swinging-spidey">
+      </div>
     <div id="loader-wrapper">
       <div class="loader-content">
         <img src="images/batman.svg" id="batman-logo" alt="Loading..." />
@@ -69,36 +72,45 @@
         </div>
       </div>
     </div>
-<div id="mojek">
-    <video id="bg-video" muted playsinline>
-      <source src="https://cdn.hackclub.com/019e74a2-761d-7f6b-83ad-3e564b96d2e6/spiderman-vid.mp4" type="video/mp4">
-    </video>
 
-    <div id="mojekCenter">
-        <h2>Pressing the button below will play music. Please turn up your volume for the full experience.</h2>
+    <div id="mojek">
+      <video id="bg-video" muted playsinline>
+        <source src="https://cdn.hackclub.com/019e74a2-761d-7f6b-83ad-3e564b96d2e6/spiderman-vid.mp4" type="video/mp4" />
+      </video>
+
+      <div id="mojekCenter">
+        <h2>
+          Pressing the button below will play music. Please turn up your volume
+          for the full experience.
+        </h2>
         <a class="button" id="bg-audio-btn">
           <i class="fa-solid fa-music" style="font-size: 24px"></i> Play
         </a>
         <audio id="bg-audio" prefetch>
-          <source src="https://cdn.hackclub.com/019e7493-8503-78c0-a4c6-a38805bda1cb/sunflower.mp4" type="audio/mp4" />
+          <source
+            src="https://cdn.hackclub.com/019e7493-8503-78c0-a4c6-a38805bda1cb/sunflower.mp4"
+            type="audio/mp4"
+          />
         </audio>
+      </div>
     </div>
-</div>
+      <div id="main-content" class="content-hidden">
     <div id="sec1">
       <div class="hero-content">
         <h1>
-          <p>Hi, my name is</p>
-          <span id="nikaspin" class="ms-playful-text">NiceSapien.</span><br />I
-          build <span id="hero-shi">cool stuff.</span>
+          <span id="nikaspin" class="ms-playful-text">Hey,</span><br />I am <span id="hero-shi">Spiderman.</span>
         </h1>
         <div class="btnContainer">
-          <a class="button" href="https://github.com/nicesapien"
-            ><i class="fa-brands fa-github" style="font-size: 24px"></i
-            >GitHub</a
+          <a class="button" href="#projects"
+            ><i class="fa-solid fa-arrow-down" style="font-size: 24px"></i
+            >My Projects</a
           >
-          <a href="#projects" id="projectbtn">my projects</a>
         </div>
       </div>
+<div class="hero-image-wrapper" id="spider-box">
+  <img src="images/spidersapien.png" alt="My Profile Picture" class="base-img">
+  <img src="images/newsapien.webp" alt="NiceSapien" class="reveal-img" id="reveal-img">
+</div>
     </div>
     <div id="main2">
       <div id="sec2">
@@ -373,6 +385,7 @@
         ><i class="fa-brands fa-x-twitter"></i
       ></a>
     </footer>
+    </div>
     <script src="scripts/spiderman.js" defer></script>
   </body>
 </html>
