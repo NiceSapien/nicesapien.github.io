@@ -1,7 +1,9 @@
-/* main css */
+/* man css */
 * {
     box-sizing: border-box;
 }
+
+
 
 html {
     scroll-behavior: smooth;
@@ -17,7 +19,6 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +31,8 @@ html {
     min-height: 100vh;
     max-lines: 2;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 #bg-video {
@@ -39,8 +42,8 @@ html {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -1; /* Pushes the video behind the text/button */
-  display: none; /* Keeps it hidden until the button is clicked */
+    z-index: 0;
+    display: none;
 }
 
 #shi {
@@ -93,6 +96,7 @@ html {
 
 #hero-shi {
     color: #ff0055;
+    letter-spacing: 6px;
 }
 
 #sec2 {
@@ -110,7 +114,7 @@ html {
 body {
     transition: 0.3s ease-in-out;
     background-color: #0d0e15;
-    color: #94a3b8;
+    color: #F4F6F9;
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -230,6 +234,7 @@ h1 p {
 }
 
 #sec2 h1 {
+    font-family: 'Bangers', sans-serif;
     font-size: 55px;
     margin: 0px;
 }
@@ -243,17 +248,30 @@ h1 p {
 #nikaspin {
     font-size: 80px;
     font-family: 'Bangers', sans-serif;
-    color: #fff;
+    color: #94a3b8;
     display: inline-flex;
 }
 
-#nikaspin:hover, #hero-shi:hover {
+#hero-shi:hover {
     text-shadow: 
     -3px -3px 0 #FF0055, 
      3px  3px 0 #00F5FF;
-    text-spacing-trim: 0.5em;
 }
 
+#nikaspin:hover {
+    text-shadow: revert;
+    letter-spacing: revert;
+}
+#shi1 h1::after, #hero-shi::after {
+  content: attr(data-text);
+  content: attr(data-text) / "";
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 8px;
+}
 #main2 {
     display: flex;
     justify-content: center;
@@ -263,7 +281,7 @@ h1 p {
     /* Centered with margin bottom */
     width: 90vw;
     max-width: 1200px;
-    background-color: #fff;
+    background-color: #1F2128;
     border: 1px solid #000;
     border-radius: 24px;
     gap: 50px;
@@ -281,17 +299,19 @@ a {
 }
 
 .button {
-    transition: 0.4s ease-in-out;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappier, web-slinging transition */
     margin-top: 20px;
-    background-color: #00F5FF;
-    color: #191717;
+    background-color: #0B1021;
+    color: #fff;
     padding: 15px 30px;
     border-radius: 0px;
     text-decoration: none;
-    border: 1px solid black;
+    border: 2px solid #ED1D24; /* Spider-Man Red */
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .button i {
@@ -300,21 +320,26 @@ a {
 
 .button.outline {
     background-color: transparent;
-    color: #191717;
+    color: #ED1D24;
 }
 
 .button:hover,
 .button:focus {
-    background-color: transparent;
-    color: black;
-    border: 1px solid black;
+    /* Classic Spidey Red and Web Blue shadow */
+    box-shadow: 
+        -4px -4px 0 #ED1D24, 
+         4px  4px 0 #0F52BA;
+    transform: translate(2px, -2px); /* Slight jump for action */
 }
 
 .button.outline:hover,
 .button.outline:focus {
-    background-color: #191717;
+    background-color: #ED1D24;
     color: white !important;
-    border-color: #191717;
+    border-color: #ED1D24;
+    box-shadow: 
+        -4px -4px 0 #0F52BA, 
+         4px  4px 0 #0B1021; /* Blue and dark shadow for contrast */
 }
 
 .outlined-img {
@@ -336,7 +361,6 @@ a {
 }
 
 #projects {
-    font-family: 'Gabarito', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -351,6 +375,7 @@ a {
     font-size: 55px;
     padding: 0px;
     margin: 0px;
+    font-family: 'Bangers', cursive;
 }
 
 #projects p {
@@ -381,6 +406,7 @@ a {
     border: 0px solid black;
     border-radius: 12px;
     width: fit-content;
+    margin-bottom: 6px;
 }
 
 .project p {
@@ -391,7 +417,12 @@ a {
 .project i {
     font-size: 30px;
     padding: 12px 0px;
-    color: #000;
+    color: #fff;
+}
+
+.project i:hover {
+    color: #ff0055;
+    transition: 0.3s ease-in-out;
 }
 
 .project img {
@@ -428,9 +459,10 @@ a {
 }
 
 #extraProjects h1 {
+    font-family: 'Bangers', cursive;
     font-size: 60px;
     margin: 0px;
-    padding: 18px;
+    padding: 25px;
 }
 
 #extraProjects a {
@@ -441,12 +473,15 @@ a {
     text-decoration: none;
 }
 
+
+
 .reverse {
     flex-direction: row-reverse;
 }
 
 footer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 15px;
@@ -454,7 +489,16 @@ footer {
     flex-wrap: wrap;
 }
 
-footer a {
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+footer a,
+.social-links a {
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -462,26 +506,32 @@ footer a {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #1F2128;
 }
 
-footer a:hover {
-    background-color: #f5f5f5;
-    border-color: #e0e0e0;
+footer a:hover,
+.social-links a:hover {
+    background-color: #0B1021;
+    border-color: #ED1D24;
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(237, 29, 36, 0.2);
 }
 
-footer i {
-    color: #313131;
+footer i,
+.social-links a i {
+    color: #F4F6F9;
     font-size: 22px;
-    opacity: 0.7;
+    opacity: 0.6;
     transition: all 0.3s ease;
 }
 
-footer a:hover i {
+footer a:hover i,
+.social-links a:hover i {
     opacity: 1;
-    color: #000;
+    color: #ED1D24;
+    transform: scale(1.1);
 }
 
 #tech h1 {
@@ -651,19 +701,22 @@ footer a:hover i {
     font-family: 'Gabarito', sans-serif;
 }
 
+#watched-before {
+    color: #F4F6F9; /* Ensures text inherits your global light color */
+}
+
 #watched-before summary {
     list-style: none;
-    /* Hide standard arrow */
     cursor: pointer;
     font-size: 24px;
     padding: 20px 30px;
-    background: #f5f5f5;
+    background: #1F2128; /* Matches your other dark section cards */
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
-    border: 1px solid #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle glass-like border */
 }
 
 #watched-before summary::-webkit-details-marker {
@@ -671,31 +724,35 @@ footer a:hover i {
 }
 
 #watched-before summary:hover {
-    background: #eaeaea;
+    background: #282a33; /* Slightly lighter on hover for feedback */
     transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 #watched-before summary::after {
     content: '+';
     font-size: 28px;
     font-weight: 300;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy rotation */
+    color: #ED1D24; /* Spidey Red accent for the icon */
 }
 
 #watched-before details[open] summary {
     border-radius: 30px 30px 0 0;
-    background: #191717;
-    color: #fff;
-    border-color: #000;
+    background: #0B1021; /* Darkens the header when open */
+    border-color: rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02); /* Soften the divide between header and content */
 }
 
 #watched-before details[open] summary::after {
     transform: rotate(45deg);
+    color: #F4F6F9; /* Icon turns white when open */
 }
 
 .watched-content {
-    background: #fff;
-    border: 1px solid #e0e0e0;
+    background: #13151D; /* Deep background so the content area visually "sinks in" */
+    color: #b0b8c4; /* Slightly dimmed text for better reading contrast on dark */
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-top: none;
     border-radius: 0 0 30px 30px;
     padding: 30px;
@@ -984,11 +1041,6 @@ footer a:hover i {
     margin: 0 auto;
 }
 
-#extraProjects h1 {
-    font-size: 60px;
-    margin-bottom: 50px;
-    font-family: 'Gabarito', sans-serif;
-}
 
 .extra-grid {
     display: grid;
@@ -998,8 +1050,8 @@ footer a:hover i {
 }
 
 .extra-card {
-    background: #fff;
-    border: 1px solid #000;
+    background: #000;
+    border: 1px solid #fff;
     border-radius: 20px;
     padding: 30px;
     text-align: left;
@@ -1034,16 +1086,20 @@ footer a:hover i {
 .card-links {
     font-size: 24px;
     align-self: flex-end;
+    color: #fff;
 }
 
 .card-links a {
-    color: #313131;
     margin-left: 10px;
     transition: color 0.3s ease;
 }
 
 .card-links a:hover {
     color: #000;
+}
+
+.card-links i {
+    color: #fff;
 }
 
 @media (max-width: 639px) {
@@ -1057,40 +1113,7 @@ footer a:hover i {
     }
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
 
-.social-links a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a i {
-    color: #313131;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    border-color: #000;
-    background-color: #000;
-    transform: translateY(-3px);
-}
-
-.social-links a:hover i {
-    color: #fff;
-}
 
 .sl-mobile {
     display: none;

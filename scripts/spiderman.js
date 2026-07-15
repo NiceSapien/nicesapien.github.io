@@ -159,6 +159,11 @@ const mojekStartTime = 1.2;
 let swingTriggered = false;
 
 mojekBtn.addEventListener("click", () => {
+  video.style.display = "none";
+   /*   if (mainContent) {
+      mainContent.classList.remove("content-hidden");
+      mainContent.classList.add("content-reveal");
+    } */
   if (audio.paused) {
     if (audio.currentTime < mojekStartTime) {
       audio.currentTime = mojekStartTime;
