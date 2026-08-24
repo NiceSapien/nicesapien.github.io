@@ -1,4 +1,52 @@
 const mojek = document.getElementById("mojek");
+const isMobileViewport =
+  window.matchMedia("(max-width: 768px)").matches &&
+  window.matchMedia("(pointer: coarse)").matches;
+
+if (isMobileViewport) {
+  document.body.innerHTML = `
+    <main id="mobile-message">
+      <p>sorry bro too lazy to optimize for mobile. see ts on PC</br></br>sunglasses emoji (too lazy to actually put it)</p>
+    </main>
+  `;
+
+  const style = document.createElement("style");
+  style.textContent = `
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #0d0e15;
+      color: #f4f6f9;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+
+    #mobile-message {
+      max-width: 22rem;
+      padding: 24px 28px;
+      border-radius: 24px;
+      background: rgba(31, 33, 40, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    #mobile-message p {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+  `;
+  document.head.appendChild(style);
+} else {
 
 document.addEventListener("DOMContentLoaded", () => {
   const progressBar = document.getElementById("progress-bar");
@@ -153,10 +201,35 @@ if (box && revealImg) {
 const audio = document.getElementById("bg-audio");
 const video = document.getElementById("bg-video");
 const mojekBtn = document.getElementById("bg-audio-btn");
+const muteBtn = document.getElementById("mute-btn");
+const muteBtnLabel = document.getElementById("mute-btn-label");
 const mojekCenter = document.getElementById("mojekCenter");
 const swingOverlay = document.getElementById("swing-overlay"); 
 const mojekStartTime = 1.2;
 let swingTriggered = false;
+
+function updateMuteButton() {
+  if (!muteBtn || !muteBtnLabel || !audio) return;
+
+  const isMuted = audio.muted;
+  muteBtn.setAttribute("aria-pressed", String(isMuted));
+  muteBtnLabel.textContent = isMuted ? "Unmute" : "Mute";
+
+  const icon = muteBtn.querySelector("i");
+  if (icon) {
+    icon.className = isMuted
+      ? "fa-solid fa-volume-xmark"
+      : "fa-solid fa-volume-high";
+  }
+}
+
+if (muteBtn && audio) {
+  updateMuteButton();
+  muteBtn.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    updateMuteButton();
+  });
+}
 
 mojekBtn.addEventListener("click", () => {
   video.style.display = "none";
@@ -175,6 +248,7 @@ mojekBtn.addEventListener("click", () => {
 
     Promise.all([audio.play(), video.play()])
       .then(() => {
+        updateMuteButton();
         mojekCenter.style.opacity = "0";
         setTimeout(() => {
           mojekCenter.style.display = "none";
@@ -234,3 +308,5 @@ video.addEventListener("ended", () => {
     }
   }, 500);
 });
+
+}
