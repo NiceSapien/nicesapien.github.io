@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Verified</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f4f4f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      max-width: 400px;
+      margin: 20px;
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      background-color: #e6f9ed;
+      color: #12a150;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 20px;
+    }
+    h1 {
+      font-size: 24px;
+      color: #333333;
+      margin: 0 0 10px;
+    }
+    p {
+      color: #666666;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 24px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #0066cc;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon">✓</div>
+    <h1>Email Verified!</h1>
+    <p>Your email address has been successfully confirmed. You can now return to the app.</p>
+    <a href="quill://login-callback" class="btn">Open App</a>
+  </div>
+
+</body>
+</html>
