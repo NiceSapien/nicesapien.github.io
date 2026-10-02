@@ -1,70 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Email Verified</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verified | Quill</title>
   <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --title: #0f172a;
+      --body: #475569;
+      --badge-bg: #dcfce7;
+      --badge-fg: #15803d;
+      --info-bg: #f1f5f9;
+      --info-border: #e2e8f0;
+      --btn-bg: #0f172a;
+      --btn-text: #ffffff;
+      --btn-hover: #1e293b;
+      --subtext: #94a3b8;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0d0e;
+        --card-bg: #17181a;
+        --border: #27282b;
+        --title: #f1f3f5;
+        --body: #9aa0a6;
+        --badge-bg: rgba(62, 207, 142, 0.15);
+        --badge-fg: #3ecf8e;
+        --info-bg: #1f2023;
+        --info-border: #2e3035;
+        --btn-bg: #3ecf8e;
+        --btn-text: #0c0d0e;
+        --btn-hover: #34b27b;
+        --subtext: #5f6368;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: #f4f4f7;
+      background-color: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      padding: 1.5rem;
+      -webkit-font-smoothing: antialiased;
     }
+
     .card {
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      padding: 36px 28px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      max-width: 400px;
-      margin: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
     }
-    .icon {
-      width: 64px;
-      height: 64px;
-      background-color: #e6f9ed;
-      color: #12a150;
+
+    .badge {
+      width: 56px;
+      height: 56px;
+      background: var(--badge-bg);
+      color: var(--badge-fg);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 32px;
-      margin: 0 auto 20px;
+      margin: 0 auto 20px auto;
     }
+
+    .badge svg {
+      width: 28px;
+      height: 28px;
+    }
+
     h1 {
-      font-size: 24px;
-      color: #333333;
-      margin: 0 0 10px;
-    }
-    p {
-      color: #666666;
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0 0 24px;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #0066cc;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 6px;
+      font-size: 1.4rem;
       font-weight: 600;
+      color: var(--title);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--body);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    /* Info card layout */
+    .info-box {
+      background-color: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .info-header {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      color: var(--subtext);
+      margin-bottom: 6px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      color: var(--subtext);
+      font-weight: 500;
+    }
+
+    .info-value {
+      color: var(--title);
+      font-weight: 600;
+      word-break: break-all;
+      text-align: right;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-size: 0.925rem;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background: var(--btn-hover);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--subtext);
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <div class="icon">✓</div>
-    <h1>Email Verified!</h1>
-    <p>Your email address has been successfully confirmed. You can now return to the app.</p>
-    <a href="quill://login-callback" class="btn">Open App</a>
+    <div class="badge">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+      </svg>
+    </div>
+
+    <h1>Email verified!</h1>
+    <p class="subtitle" id="status-text">Your account email has been verified.</p>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <div class="info-header">Info</div>
+      <div class="info-row">
+        <span class="info-label">Email:</span>
+        <span class="info-value" id="user-email">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Deep-link button to open the mobile app -->
+    <a href="quill://login-callback" id="open-app-btn" class="btn">Open App</a>
+
+    <div class="footer">
+      You can safely close this browser tab.
+    </div>
   </div>
 
+  <script>
+    (function () {
+      function parseJwt(token) {
+        try {
+          const base64Url = token.split('.')[1];
+          const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          const jsonPayload = decodeURIComponent(
+            atob(base64)
+              .split('')
+              .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+              .join('')
+          );
+          return JSON.parse(jsonPayload);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      let email = null;
+      let accessToken = null;
+
+      // 1. Check URL Hash (Default Supabase implicit flow: #access_token=...&...)
+      if (window.location.hash) {
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        accessToken = hashParams.get('access_token');
+      }
+
+      // 2. Fallback to URL Query params (?access_token=... or ?email=...)
+      if (!accessToken) {
+        const searchParams = new URLSearchParams(window.location.search);
+        accessToken = searchParams.get('access_token');
+        email = searchParams.get('email'); // in case passed directly
+      }
+
+      // 3. Decode the JWT if token exists
+      if (accessToken) {
+        const payload = parseJwt(accessToken);
+        if (payload && payload.email) {
+          email = payload.email;
+        }
+      }
+
+      // 4. Update the DOM
+      const emailEl = document.getElementById('user-email');
+      const statusEl = document.getElementById('status-text');
+
+      if (email) {
+        emailEl.textContent = email;
+        statusEl.textContent = 'Your account email has been verified.';
+      } else {
+        emailEl.textContent = 'Verified';
+      }
+
+      // 5. Pass tokens forward to mobile app scheme if you use custom URI schemes
+      if (window.location.hash) {
+        const appBtn = document.getElementById('open-app-btn');
+        // Example: opens nicesapien://#access_token=... so the app can auto-login
+        appBtn.href = 'quill://login-callback' + window.location.hash;
+      }
+    })();
+  </script>
 </body>
 </html>
